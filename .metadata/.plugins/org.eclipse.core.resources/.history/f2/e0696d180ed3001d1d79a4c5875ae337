@@ -1,0 +1,25 @@
+package tp03.ejercicio3;
+
+import tp02.ejercicio1.ListaDeEnterosEnlazada;
+import tp03.ejercicio1.*;
+
+public class ContadorArbol {
+	private ArbolBinario<Integer> arbol;
+
+	public ListaDeEnterosEnlazada numerosPares() {
+
+		if (this.arbol.esVacio()) {
+		}
+
+		if (this.arbol.getDato() % 2 == 0) {
+		}
+
+		if (this.arbol.tieneHijoIzquierdo()) {
+
+		}
+
+		if (this.arbol.tieneHijoDerecho()) {
+		}
+	}
+
+}
