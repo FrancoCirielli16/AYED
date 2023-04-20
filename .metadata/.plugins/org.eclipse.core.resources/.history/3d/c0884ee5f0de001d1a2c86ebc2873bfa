@@ -1,0 +1,11 @@
+package tp04.ejercicio5;
+
+public class AreaEmpresa {
+	private String id;
+	private Integer time;
+	
+	public AreaEmpresa(String id,Integer time) {
+		this.id=id;
+		this.time=time;
+	}
+}

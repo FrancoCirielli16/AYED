@@ -1,0 +1,34 @@
+package tp04.ejercicio5;
+
+import tp02.ejercicio2.ListaEnlazadaGenerica;
+import tp02.ejercicio3.ColaGenerica;
+import tp04.ejercicio1.ArbolGeneral;
+
+public class AnalizadorArbol {
+	
+	public int devolverMaximoPromedio (ArbolGeneral<AreaEmpresa>arbol) {
+		ColaGenerica<ArbolGeneral<AreaEmpresa>> cola = new ColaGenerica<ArbolGeneral<AreaEmpresa>>();
+		ArbolGeneral<AreaEmpresa> aux;
+		Integer max=-1,suma=0,promedio=-1,nivel=0,cantidad=0;
+		cola.apilar(arbol);
+		cola.apilar(null);
+		while(!cola.esVacia()) {
+			aux=cola.desapilar();
+			if(aux != null) {
+				cantidad++;
+				suma+=aux.getDato().getTime();
+				if(aux.tieneHijos()) {
+					ListaEnlazadaGenerica<ArbolGeneral<AreaEmpresa>> hijos = aux.getHijos();
+					hijos.comenzar();
+					while(!hijos.fin()) {
+						cola.apilar(hijos.proximo());
+					}
+				}
+			}
+			else {
+				promedio
+			}
+		}
+		
+	}
+}

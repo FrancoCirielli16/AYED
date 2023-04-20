@@ -1,0 +1,27 @@
+
+a) ¿Qué recorridos conoce para recorrer en profundidad un árbol general? Explique brevemente.
+
+	Se puede recorrer INORDEN,POSTORDEN,PREORDEN,PorNiveles
+	
+	INORDEN --> ESTE IMPLICA EN VISITAR EL SUBARBOL IZQUIERDO LUEGO LA RAIZ(TRABAJARLA O NO) Y LUEGO VISITAR EL SUBARBOL DERECHO.
+	
+	POSTORDEN --> ESTE IMPLICA VISITAR EL SUBARBOL IZQUIERDO,LUEGO EL SUBARBOL DERECHO Y LUEGO VISITAR LA RAIZ(TRABAJARLA O NO)
+	
+	PREORDEN --> ESTE IMPLICA VISITAR LA RAIZ(TRABAJARLA O NO) LUEGO VISITAS EL SUBARBOL IZQUIERDO Y LUEGO VISITAR EL SUBARBOL DERECHO
+	
+	POR NIVELES --> ESTE RECORRIDO SE BASA TRABAJAR Y RECORRER EL ARBOL NIVEL A NIVEL 
+
+b) ¿Qué recorridos conoce para recorrer por niveles un árbol general? Explique brevemente.
+	
+	
+
+c) ¿Existe alguna diferencia entre los recorridos preorden, postorden, inorden para recorrer los
+árboles generales respecto de los árboles binarios? Justifique su respuesta
+
+
+d) ¿Existe alguna noción de orden entre los elementos de un árbol general? Justifique su respuesta.
+
+
+e) En un árbol general se define el grado de un nodo como el número de hijos de ese nodo y el grado
+del árbol como el máximo de los grados de los nodos del árbol. ¿Qué relación encuentra entre los
+Árboles Binarios sin tener en cuenta la implementación? Justifique su respuesta.

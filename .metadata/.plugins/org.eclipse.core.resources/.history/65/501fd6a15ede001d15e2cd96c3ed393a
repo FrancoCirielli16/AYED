@@ -1,0 +1,43 @@
+package tp04.ejercicio3;
+
+import tp02.ejercicio2.ListaEnlazadaGenerica;
+import tp02.ejercicio2.ListaGenerica;
+import tp04.ejercicio1.ArbolGeneral;
+
+public class RecorridosAG {
+	
+
+	private	void numerosImparesMayoresQuePreOrden (ArbolGeneral<Integer> a, Integer n,ListaGenerica<Integer> l){
+		if(!a.esVacio()) {
+			if(a.getDato() % 2 == 1 & a.getDato() > n) {
+				l.agregarFinal(a.getDato());
+			}
+			if(a.tieneHijos()) {
+				ListaGenerica<ArbolGeneral<Integer>> Hijos = a.getHijos();
+				Hijos.comenzar();
+				while(!Hijos.fin()) {
+					numerosImparesMayoresQuePreOrden(Hijos.proximo(),n,l);
+				}
+			}
+		}
+		
+	}
+	
+	public ListaGenerica<Integer> numerosImparesMayoresQuePreOrden (ArbolGeneral<Integer> a, Integer n){
+		ListaEnlazadaGenerica<Integer> l = new ListaEnlazadaGenerica<Integer>();
+		numerosImparesMayoresQuePreOrden(a,n,l);
+		return l;
+		
+	}
+			
+
+	
+	public ListaGenerica< Integer > numerosImparesMayoresQueInOrden (ArbolGeneral<Integer> a, Integer n){
+				
+			}
+			
+	public ListaGenerica< Integer > numerosImparesMayoresQuePostOrden (ArbolGeneral<Integer> a, Integer n){}
+			
+			
+	public ListaGenerica< Integer > numerosImparesMayoresQuePorNiveles(ArbolGeneral<Integer> a, Integer n){}
+}
