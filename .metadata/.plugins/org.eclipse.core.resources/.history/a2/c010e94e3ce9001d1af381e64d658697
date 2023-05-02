@@ -1,0 +1,15 @@
+package tp03.parcialesAB.impares;
+
+import tp03.ejercicio1.ArbolBinario;
+
+public class Parcil {
+		
+		ArbolBinario<Integer> A;
+	
+		private boolean resolver(ArbolBinario<Integer> a,int k){
+			if() {}
+		}
+		
+		public boolean resolver(int k) {}
+	}
+}

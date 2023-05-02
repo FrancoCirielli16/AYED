@@ -1,0 +1,11 @@
+package tp03.parcialesAB.impares;
+
+public class Parcile {
+
+		privte boolean resolver(int k){
+			if() {}
+		}
+		
+		public boolean resolver(aRN,int k) {}
+	}
+}

@@ -1,0 +1,38 @@
+package tp03.parcialesAB.impares;
+
+import tp02.ejercicio2.ListaEnlazadaGenerica;
+import tp02.ejercicio2.ListaGenerica;
+import tp03.ejercicio1.ArbolBinario;
+
+public class ProcesadorDeArbol {
+	private ArbolBinario<Integer> A;
+	
+	private Integer procesar(ArbolBinario<Integer> arbol ,ListaGenerica<Integer> l) {
+		Integer impares = 0;
+		if(!arbol.esHoja()) {
+			if(arbol.tieneHijoIzquierdo()) {
+				procesar(arbol.getHijoIzquierdo(),l);
+			}
+			if(arbol.tieneHijoDerecho()) {
+				procesar(arbol.getHijoDerecho(),l);
+			}
+			if(arbol.tieneHijoIzquierdo() && arbol.tieneHijoDerecho()){
+				if(arbol.getDato() % 2 != 0) {
+					impares += 1;
+				}
+			}
+			else {
+				if((arbol.getDato() % 2 != 0) && (arbol.tieneHijoDerecho() || arbol.tieneHijoIzquierdo())) {
+					l.agregarFinal(arbol.getDato());
+					impares += 1;
+				}
+			}
+		}
+		return impares;
+	}
+	
+	public Integer procesar(ListaGenerica<Integer> l) {
+		l = new ListaEnlazadaGenerica<Integer>();
+		return procesar(this.A,l);
+	}
+}
