@@ -1,0 +1,101 @@
+package tp03.ParcialF;
+
+import tp02.ejercicio2.ListaEnlazadaGenerica;
+import tp02.ejercicio2.ListaGenerica;
+import tp03.ejercicio1.ArbolBinario;
+
+public class ParcialF {
+
+	public ListaGenerica<Integer> camino(ArbolBinario<Integer> a, Integer n, Integer m) {
+		ListaGenerica<Integer> l = new ListaEnlazadaGenerica<Integer>();
+		ListaGenerica<ArbolBinario<Integer>> aux = new ListaEnlazadaGenerica<ArbolBinario<Integer>>();
+		if (a.esVacio()) {
+			return l;
+		}
+		caminoN(a, n, aux);
+		aux.comenzar();
+		caminoM(aux.proximo(), l, m);
+
+		return l;
+
+	}
+
+	private boolean caminoM(ArbolBinario<Integer> a, ListaGenerica<Integer> l, Integer m) {
+		boolean encontre = false;
+		l.agregarFinal(a.getDato());
+		if (a.getDato() == m) 
+			return true;
+		
+		if (a.tieneHijoIzquierdo() && (!encontre)) 
+			encontre = caminoM(a.getHijoIzquierdo(), l, m);
+		
+		if ((!encontre) && (a.tieneHijoDerecho())) 
+			encontre = caminoM(a.getHijoDerecho(), l, m);
+		
+		if (!encontre) 
+			l.eliminarEn(l.tamanio());
+		
+		return encontre;
+	}
+
+	private boolean caminoN(ArbolBinario<Integer> a, Integer n, ListaGenerica<ArbolBinario<Integer>> aux) {
+		boolean encontre = false;
+		if (a.getDato() == n) {
+			aux.agregarFinal(a);
+			return true;
+			
+		}
+		if (a.tieneHijoIzquierdo() && (!encontre))
+			encontre = caminoN(a.getHijoIzquierdo(), n, aux);
+
+		if (a.tieneHijoDerecho() && (!encontre))
+			encontre = caminoN(a.getHijoDerecho(), n, aux);
+
+		return encontre;
+	}
+	
+	
+	public ListaGenerica<Integer> camino2(ArbolBinario<Integer> a, Integer n, Integer m) {
+		ListaGenerica<Integer> l = new ListaEnlazadaGenerica<Integer>();
+		if (a.esVacio()) {
+			return l;
+		}
+		caminoN2(a, n, l,m);
+	
+		return l;
+
+	}
+
+	private boolean caminoM2(ArbolBinario<Integer> a, ListaGenerica<Integer> l, Integer m) {
+		boolean encontre = false;
+		l.agregarFinal(a.getDato());
+		if (a.getDato() == m) 
+			return true;
+		
+		if (a.tieneHijoIzquierdo() && (!encontre)) 
+			encontre = caminoM(a.getHijoIzquierdo(), l, m);
+		
+		if ((!encontre) && (a.tieneHijoDerecho())) 
+			encontre = caminoM(a.getHijoDerecho(), l, m);
+		
+		if (!encontre) 
+			l.eliminarEn(l.tamanio());
+		
+		return encontre;
+	}
+
+	private boolean caminoN2(ArbolBinario<Integer> a, Integer n, ListaGenerica<Integer> l,Integer m) {
+		boolean encontre = false;
+		if (a.getDato() == n) {
+			caminoM2(a,l,m);
+			return true;
+		}
+		if (a.tieneHijoIzquierdo() && (!encontre))
+			encontre = caminoN2(a.getHijoIzquierdo(), n, l,m);
+
+		if (a.tieneHijoDerecho() && (!encontre))
+			encontre = caminoN2(a.getHijoDerecho(), n, l,m);
+
+		return encontre;
+	}
+}

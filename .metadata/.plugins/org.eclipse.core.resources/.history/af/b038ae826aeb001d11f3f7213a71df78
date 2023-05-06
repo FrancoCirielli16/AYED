@@ -1,0 +1,48 @@
+package tp03.ParcialF;
+
+import tp02.ejercicio2.ListaEnlazadaGenerica;
+import tp02.ejercicio2.ListaGenerica;
+import tp03.ejercicio1.ArbolBinario;
+
+public class ParcialF {
+	
+	public ListaGenerica<Integer> camino(ArbolBinario<Integer> a,Integer n, Integer m){
+		ListaGenerica<Integer> l = new ListaEnlazadaGenerica<Integer>();
+		ArbolBinario<Integer> aux;
+		if(a.esVacio()) {
+			return l;
+		}
+		aux = caminoN(a,n);
+		caminoM(aux,l,m);
+		return n;
+		
+	}
+	
+	private boolean caminoM(ArbolBinario<Integer> a,ListaGenerica<Integer> l,Integer m) {
+		boolean encontre = true;
+		l.agregarFinal(a.getDato());
+		if(a.getDato()==m) {
+			return false;
+		}
+		else {
+			
+		}
+		
+	}
+	
+	
+	private ArbolBinario<Integer> caminoN(ArbolBinario<Integer> a,Integer n){
+		if(a.getDato()==n) {
+			return a;
+		}
+		else {
+			if(a.tieneHijoIzquierdo()) {
+				caminoN(a.getHijoIzquierdo(),n);
+			}
+			if(a.tieneHijoDerecho()) {
+				caminoN(a.getHijoDerecho(),n);
+			}
+			return null;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+package tp03.BuscadorArbol;
+
+
+import tp03.ejercicio1.ArbolBinario;
+
+
+public class test {
+	public static void main(String[] arg) {
+	        
+			ArbolBinario<Integer> catorce = new ArbolBinario(14);     
+			ArbolBinario<Integer> tres  = new ArbolBinario(2);        
+			ArbolBinario<Integer> dos = new ArbolBinario(2);          
+			ArbolBinario<Integer> doce = new ArbolBinario(11);        
+			ArbolBinario<Integer> nueve = new ArbolBinario(4);        
+			ArbolBinario<Integer> treintaYtres = new ArbolBinario(33);
+			ArbolBinario<Integer> cientoDos = new ArbolBinario(102);  
+			                                                          
+			catorce.agregarHijoIzquierdo(tres);                       
+			catorce.agregarHijoDerecho(dos);                          
+			tres.agregarHijoIzquierdo(doce);                          
+			tres.agregarHijoDerecho(nueve);                           
+			dos.agregarHijoIzquierdo(treintaYtres);                   
+			dos.agregarHijoDerecho(cientoDos);
+			
+			BuscadorDeArbol b = new BuscadorDeArbol();
+			
+			b.setA(catorce);
+			
+			System.out.println(b.buscar());
+			
+		
+	}
+}

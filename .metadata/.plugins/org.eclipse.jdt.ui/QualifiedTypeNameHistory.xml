@@ -4,8 +4,9 @@
     <fullyQualifiedTypeName name="tp02.ejercicio1.ListaDeEnteros"/>
     <fullyQualifiedTypeName name="tp04.ejercicio3.RecorridosAG"/>
     <fullyQualifiedTypeName name="tp02.ejercicio3.ColaGenerica"/>
-    <fullyQualifiedTypeName name="tp02.ejercicio2.ListaEnlazadaGenerica"/>
-    <fullyQualifiedTypeName name="tp04.ejercicio1.ArbolGeneral"/>
-    <fullyQualifiedTypeName name="tp02.ejercicio2.ListaGenerica"/>
+    <fullyQualifiedTypeName name="tp03.parcialesAB.impatringres.ParcialCAMINOS"/>
     <fullyQualifiedTypeName name="tp03.ejercicio1.ArbolBinario"/>
+    <fullyQualifiedTypeName name="tp04.ejercicio1.ArbolGeneral"/>
+    <fullyQualifiedTypeName name="tp02.ejercicio2.ListaEnlazadaGenerica"/>
+    <fullyQualifiedTypeName name="tp02.ejercicio2.ListaGenerica"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,45 @@
+package tp03.ParcialF;
+
+import tp02.ejercicio2.ListaEnlazadaGenerica;
+import tp02.ejercicio2.ListaGenerica;
+import tp03.BuscadorArbol.BuscadorDeArbol;
+import tp03.ejercicio1.ArbolBinario;
+
+public class test {
+	public static void main(String[] arg) {
+		 //           14
+	    //         /    \
+	    //        3     2
+	    //       / \    / \
+	    //      12  9  33 102
+		
+			ArbolBinario<Integer> catorce = new ArbolBinario<Integer>(14);
+			ArbolBinario<Integer> tres  = new ArbolBinario<Integer>(3);
+			ArbolBinario<Integer> dos = new ArbolBinario<Integer>(2);
+			ArbolBinario<Integer> doce = new ArbolBinario<Integer>(12);
+			ArbolBinario<Integer> nueve = new ArbolBinario<Integer>(9);
+			ArbolBinario<Integer> treintaYtres = new ArbolBinario<Integer>(33);
+			ArbolBinario<Integer> cuatro = new ArbolBinario<Integer>(4);
+			ArbolBinario<Integer> cientoDos = new ArbolBinario<Integer>(102);
+			                                                          
+			catorce.agregarHijoIzquierdo(tres);                       
+			catorce.agregarHijoDerecho(dos);                          
+			tres.agregarHijoIzquierdo(doce);                          
+			tres.agregarHijoDerecho(nueve);                           
+			dos.agregarHijoIzquierdo(treintaYtres);
+			dos.agregarHijoDerecho(cientoDos);
+			treintaYtres.agregarHijoIzquierdo(cuatro);
+			
+			ParcialF c = new ParcialF();
+			ListaGenerica<Integer> l = new ListaEnlazadaGenerica<Integer>();
+			l = c.camino(catorce, 14, 9);
+			System.out.println(l.tamanio());
+			l.comenzar();
+			while(!l.fin()) {
+				System.out.println(l.proximo());
+			}
+			
+				
+			
+		}
+}

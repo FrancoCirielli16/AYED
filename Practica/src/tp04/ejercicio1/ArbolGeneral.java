@@ -149,7 +149,15 @@ public class ArbolGeneral<T> {
 		}
 		return max;
 	}
-
+	
+	public boolean esPrincesa() {
+		return this.dato.equals("princesa");
+	}
+	
+	
+	public boolean esDragon() {
+		return this.dato.equals("dragon");
+	}
 	
 	
 }
